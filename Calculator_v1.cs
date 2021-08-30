@@ -124,8 +124,15 @@ namespace Calculator1
         private static void DivideNumbers(Double[] num)
         {
             double result = 0;
-            result = num[0] / num[1];
-            Console.WriteLine($"Result: {num[0]} / {num[1]} = {result}");
+            if (num[1] == 0){
+                Console.WriteLine("You cannot divide by zero! Exiting calculator now.\n");
+                Environment.Exit(1);
+                
+            } else {
+                result = num[0] / num[1];
+                Console.WriteLine($"Result: {num[0]} / {num[1]} = {result}");
+            }
+            
         }
 
     }
