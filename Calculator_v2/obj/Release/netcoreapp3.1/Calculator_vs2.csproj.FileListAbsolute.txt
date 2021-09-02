@@ -1,0 +1,14 @@
+C:\Users\brend\Code\MSSA\Calculators_CSharp\Calculator_v2\bin\Release\netcoreapp3.1\Calculator_vs2.exe
+C:\Users\brend\Code\MSSA\Calculators_CSharp\Calculator_v2\bin\Release\netcoreapp3.1\Calculator_vs2.deps.json
+C:\Users\brend\Code\MSSA\Calculators_CSharp\Calculator_v2\bin\Release\netcoreapp3.1\Calculator_vs2.runtimeconfig.json
+C:\Users\brend\Code\MSSA\Calculators_CSharp\Calculator_v2\bin\Release\netcoreapp3.1\Calculator_vs2.runtimeconfig.dev.json
+C:\Users\brend\Code\MSSA\Calculators_CSharp\Calculator_v2\bin\Release\netcoreapp3.1\Calculator_vs2.dll
+C:\Users\brend\Code\MSSA\Calculators_CSharp\Calculator_v2\bin\Release\netcoreapp3.1\Calculator_vs2.pdb
+C:\Users\brend\Code\MSSA\Calculators_CSharp\Calculator_v2\obj\Release\netcoreapp3.1\Calculator_vs2.csproj.AssemblyReference.cache
+C:\Users\brend\Code\MSSA\Calculators_CSharp\Calculator_v2\obj\Release\netcoreapp3.1\Calculator_vs2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\brend\Code\MSSA\Calculators_CSharp\Calculator_v2\obj\Release\netcoreapp3.1\Calculator_vs2.AssemblyInfoInputs.cache
+C:\Users\brend\Code\MSSA\Calculators_CSharp\Calculator_v2\obj\Release\netcoreapp3.1\Calculator_vs2.AssemblyInfo.cs
+C:\Users\brend\Code\MSSA\Calculators_CSharp\Calculator_v2\obj\Release\netcoreapp3.1\Calculator_vs2.csproj.CoreCompileInputs.cache
+C:\Users\brend\Code\MSSA\Calculators_CSharp\Calculator_v2\obj\Release\netcoreapp3.1\Calculator_vs2.dll
+C:\Users\brend\Code\MSSA\Calculators_CSharp\Calculator_v2\obj\Release\netcoreapp3.1\Calculator_vs2.pdb
+C:\Users\brend\Code\MSSA\Calculators_CSharp\Calculator_v2\obj\Release\netcoreapp3.1\Calculator_vs2.genruntimeconfig.cache
