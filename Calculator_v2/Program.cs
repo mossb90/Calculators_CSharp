@@ -20,9 +20,9 @@ namespace Calculator_v2
                 -- push integer into number stack
             - if '(' push onto operators stack
             - if ')' solve expression between ( ) and push results onto number stack
-            - if +, -, *, /, check to see if operator on top of stack is higher precident than current operator,
-                -- if true, apply operator on top of stack to top two values on number stack & add result to numbers stack
-                -- if false, push token onto operator stack
+            - if +, -, *, /, check to see if operator on top of stack is higher precident than newest operator,
+                -- if true, apply operator on top of stack to top two values on number stack & add result to numbers stack & newest operator onto operator stack
+                -- if false, push newest operator onto operator stack
             - once all tokens have been examined, apply remaining operations to remaining numbers
 
             Anticipated Methods:

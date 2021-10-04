@@ -5,44 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator_v3WPF"
         mc:Ignorable="d"
-        Title="Calculator" Height="775" Width="445">
-    <Grid Margin="10,10,10,10" Background="Navy">
+        Title="Calculator" Height="650" Width="300" MinHeight="500" MinWidth="231">
+    <Grid Margin="10,10,10,10" Background="Navy"  >
+        <!--  -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="150"/>
-            <RowDefinition Height="110"/>
-            <RowDefinition Height="110"/>
-            <RowDefinition Height="110"/>
-            <RowDefinition Height="110"/>
-            <RowDefinition Height="110"/>
-       
+            <RowDefinition MaxHeight="75"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-        <TextBox Name ="EntryBox" FontSize="20" TextAlignment="Right" VerticalAlignment="Bottom" Margin="35,15,35,20" Height="62"/>
-        <TextBox Name ="Expression" FontSize="16" TextAlignment="Right" VerticalAlignment="Top" Margin="35,15,35,10" Height="40" BorderThickness="0" Background="Navy" Foreground="White">=</TextBox>
-        <Button Click = "AppendRightPara" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="1" Margin="35,5,0,5" FontSize="20" FontWeight="Bold">(</Button>
-        <Button Click = "AppendLeftPara" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="1" Margin="130,5,0,5" FontSize="20" FontWeight="Bold">(</Button>
-        <Button Click = "RemoveChar" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="1" Margin="225,5,0,5" FontSize="20" FontWeight="Bold">bs</Button>
-        <Button Click = "AllClear" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="1" Margin="320,5,0,5" FontSize="20" FontWeight="Bold">AC</Button>
+        <TextBox Name ="Expression" IsReadOnly="True" Grid.Row="0" FontSize="16" TextAlignment="Right" VerticalContentAlignment="Bottom" Grid.ColumnSpan ="4" Margin="10,15,10,10" Height="40" BorderThickness="0" Background="Navy" Foreground="White"></TextBox>
+        <TextBox Name ="EntryBox" IsReadOnly="True" Grid.Row="1" FontSize="18" TextAlignment="Right"  Grid.ColumnSpan ="4" Margin="10,15,10,20" MinHeight="50"></TextBox>
+        <Button x:Name="btnLeftPar" Click = "btnClick_AppendOperator" Grid.Row="2" Grid.Column ="0" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="(">(</Button>
+        <Button x:Name="btnRightPar" Click = "btnClick_AppendOperator" Grid.Row="2" Grid.Column ="1" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag=")">)</Button>
+        <Button x:Name="btnBackSpace" Click = "btnClick_RemoveChar" Grid.Row="2" Grid.Column ="2" Margin="10,10,10,10">
+            <Image Source="./backspace.png"/>
+        </Button>
+        <Button x:Name="btnAllClear" Click = "btnClick_AllClear" Grid.Row="2" Grid.Column ="3" Margin="10,10,10,10" FontSize="20" FontWeight="Bold">AC</Button>
 
-        <Button Click = "Append7" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="2" Margin="35,5,0,5" FontSize="20" FontWeight="Bold">7</Button>
-        <Button Click = "Append8" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="2" Margin="130,5,0,5" FontSize="20" FontWeight="Bold">8</Button>
-        <Button Click = "Append9" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="2" Margin="225,5,0,5" FontSize="20" FontWeight="Bold">9</Button>
-        <Button Click = "AppendDivide" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="2" Margin="320,5,0,5" FontSize="20" FontWeight="Bold">/</Button>
+        <Button x:Name="btn7" Click = "btnClick_AppendNum" Grid.Row="3" Grid.Column ="0" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="7">7</Button>
+        <Button x:Name="btn8" Click = "btnClick_AppendNum" Grid.Row="3" Grid.Column ="1" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="8">8</Button>
+        <Button x:Name="btn9" Click = "btnClick_AppendNum" Grid.Row="3" Grid.Column ="2" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="9">9</Button>
+        <Button x:Name="btnDivide" Click = "btnClick_AppendOperator" Grid.Row="3" Grid.Column ="3" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="/">÷</Button>
 
-        <Button Click = "Append4" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="3" Margin="35,5,0,5" FontSize="20" FontWeight="Bold">4</Button>
-        <Button Click = "Append5" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="3" Margin="130,5,0,5" FontSize="20" FontWeight="Bold">5</Button>
-        <Button Click = "Append6" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="3" Margin="225,5,0,5" FontSize="20" FontWeight="Bold">6</Button>
-        <Button Click = "AppendMultiply" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="3" Margin="320,5,0,5" FontSize="20" FontWeight="Bold">X</Button>
+        <Button x:Name="btn4" Click = "btnClick_AppendNum" Grid.Row="4" Grid.Column ="0" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="4">4</Button>
+        <Button x:Name="btn5" Click = "btnClick_AppendNum" Grid.Row="4" Grid.Column ="1" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="5">5</Button>
+        <Button x:Name="btn6" Click = "btnClick_AppendNum" Grid.Row="4" Grid.Column ="2" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="6">6</Button>
+        <Button x:Name="btnMultiply" Click = "btnClick_AppendOperator" Grid.Row="4" Grid.Column ="3" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="*">×</Button>
 
-        <Button Click = "Append1" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="4" Margin="35,5,0,5" FontSize="20" FontWeight="Bold">1</Button>
-        <Button Click = "Append2" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="4" Margin="130,5,0,5" FontSize="20" FontWeight="Bold">2</Button>
-        <Button Click = "Append3" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="4" Margin="225,5,0,5" FontSize="20" FontWeight="Bold">3</Button>
-        <Button Click = "AppendSubract" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="4" Margin="320,5,0,5" FontSize="20" FontWeight="Bold">-</Button>
+        <Button x:Name="btn1" Click = "btnClick_AppendNum" Grid.Row="5" Grid.Column ="0" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="1">1</Button>
+        <Button x:Name="btn2" Click = "btnClick_AppendNum" Grid.Row="5" Grid.Column ="1" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="2">2</Button>
+        <Button x:Name="btn3" Click = "btnClick_AppendNum" Grid.Row="5" Grid.Column ="2" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="3">3</Button>
+        <Button x:Name="btnSubtract" Click = "btnClick_AppendOperator" Grid.Row="5" Grid.Column ="3" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="-">-</Button>
 
-        <Button Click = "AppendDecimal" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="5" Margin="35,5,0,5" FontSize="20" FontWeight="Bold">.</Button>
-        <Button Click = "Append0" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="5" Margin="130,5,0,5" FontSize="20" FontWeight="Bold">0</Button>
-        <Button Click = "CalculateResult" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="5" Margin="225,5,0,5" FontSize="20" FontWeight="Bold">=</Button>
-        <Button Click = "AppendLeftPara" HorizontalAlignment="Left" Width="70" Height="95" Grid.Row="5" Margin="320,5,0,5" FontSize="20" FontWeight="Bold">+</Button>
+        <Button x:Name="btnBlank" Grid.Row="6" Grid.Column ="0" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="."></Button>
+        <Button x:Name="btn0" Click = "btnClick_AppendNum" Grid.Row="6" Grid.Column ="1" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="0">0</Button>
+        <Button x:Name="btnEquals" Click = "btnClick_Equals" Grid.Row="6" Grid.Column ="2" Margin="10,10,10,10" FontSize="20" FontWeight="Bold">=</Button>
+        <Button x:Name="btnAdd" Click = "btnClick_AppendOperator" Grid.Row="6" Grid.Column ="3" Margin="10,10,10,10" FontSize="20" FontWeight="Bold" Tag="+">+</Button>
 
         
     </Grid>
